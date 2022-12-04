@@ -8,7 +8,8 @@ RUN apt-get update && \
 
 WORKDIR Anomaly_Detection
 RUN pip install --upgrade pip
-RUN pip install -r Anomaly_Detection/requirements.txt
+
+RUN pip install -r requirements.txt
 
 # Copy UI application
 COPY anomaly_detection_ui.py .
