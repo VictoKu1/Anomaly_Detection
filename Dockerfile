@@ -6,9 +6,8 @@ RUN apt-get update && \
     apt-get install -y git && \
     git clone https://github.com/VictoKu1/Anomaly_Detection.git
 
-WORKDIR Anomaly_Detection
+WORKDIR /Anomaly_Detection
 RUN pip install --upgrade pip
-
 RUN pip install -r requirements.txt
 
 # Copy UI application
