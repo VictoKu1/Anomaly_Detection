@@ -1,4 +1,8 @@
-# Docker container for running a github reposiory https://github.com/VictoKu1/Anomaly_Detection.git with anomaly detection python script, the docker container will run from itself an UI applicaion where the user can add an incident and get a prediction if the incident is an anomaly or not.
+# Docker container for running a github reposiory
+# https://github.com/VictoKu1/Anomaly_Detection.git
+# with anomaly detection python script,
+# the docker container will run from itself an UI applicaion
+# where the user can add an incident and get a prediction if the incident is an anomaly or not.
 
 FROM python:3.7
 
