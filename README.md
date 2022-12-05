@@ -1,1 +1,3 @@
-# Anomaly_Detection
+# Anomaly Detection
+
+###### Ariel University, Israel || Semester A - 2022
