@@ -1,4 +1,10 @@
-# UI which is being called by the dockerfile and allows the user can add an incident and get a prediction if the incident is an anomaly or not, the model which is being used is DBSCAN and the data is the conn_attack.csv and conn_attack_anomaly_labels.csv which is a labeled dataset
+# UI which is being called by the Dockerfile
+# and allows the user to add an incident to get a prediction
+# if the incident is an anomaly or not.
+
+# The model which is being used is DBSCAN
+# and the data are conn_attack.csv and conn_attack_anomaly_labels.csv
+# which is a labeled dataset.
 
 import pandas as pd
 from sklearn.metrics import f1_score
@@ -30,8 +36,9 @@ dbs_labels = pd.Series(dbs.fit_predict(df)).apply(lambda x: _map(x))
 pred = dbs.fit_predict([[Duration_, src_bytes_, dst_bytes_]])
 
 # Print the prediction
-print("\nThe incident is:\t\t\t", _map(pred[0]))
+print()
+print("The incident is:\t\t\t", _map(pred[0]))
 
 # Calculate the f1_score using the true labels
 f1_score = f1_score(target["label"], dbs_labels)
-print("\nThe F1 score of the model is:\t", f1_score)
+print("The F1 score of the model is:\t", f1_score)
