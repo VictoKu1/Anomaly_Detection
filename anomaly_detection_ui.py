@@ -20,9 +20,7 @@ dst_bytes_ = int(input("Enter the dst_bytes:"))
 
 # A mapping function to fit the correct labels
 def _map(x):
-    if x == -2:
-        return -1
-    return 0
+    return -1 if x == -2 else 0
 
 
 DBS = DBSCAN(min_samples=150, n_jobs=-1)
