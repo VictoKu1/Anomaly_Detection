@@ -13,7 +13,7 @@ target = pd.read_csv("conn_attack_anomaly_labels.csv",
                      index_col="id")  # 0 outlier 1 inline
 
 # Ask for the incident data
-duration_ = int(input("Enter the duration:\t"))
+Duration_ = int(input("Enter the Duration_:\t"))
 src_bytes_ = int(input("Enter the src_bytes:\t"))
 dst_bytes_ = int(input("Enter the dst_bytes:\t"))
 
@@ -27,11 +27,11 @@ dbs = DBSCAN(min_samples=150, n_jobs=-1)
 dbs_labels = pd.Series(dbs.fit_predict(df)).apply(lambda x: _map(x))
 
 # Predict the incident
-pred = dbs.fit_predict([[duration_, src_bytes_, dst_bytes_]])
+pred = dbs.fit_predict([[Duration_, src_bytes_, dst_bytes_]])
 
 # Print the prediction
-print("The incident is:\t\t", _map(pred[0]))
+print("\nThe incident is:\t\t\t", _map(pred[0]))
 
 # Calculate the f1_score using the true labels
 f1_score = f1_score(target["label"], dbs_labels)
-print("The F1 score of the model is:\t", f1_score)
+print("\nThe F1 score of the model is:\t", f1_score)
