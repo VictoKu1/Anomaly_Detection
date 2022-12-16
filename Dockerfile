@@ -19,3 +19,6 @@ COPY anomaly_detection_ui.py .
 
 # Run the UI application
 CMD ["python", "anomaly_detection_ui.py"]
+
+
+
