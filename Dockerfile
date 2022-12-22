@@ -22,3 +22,7 @@ CMD ["python", "anomaly_detection_ui.py"]
 
 
 
+
+
+
+
