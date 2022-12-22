@@ -4,21 +4,21 @@
 # the docker container will run from itself an UI applicaion
 # where the user can add an incident and get a prediction if the incident is an anomaly or not.
 
-FROM python:3.7
+FROM python:3
 
-RUN apt-get update && \
-    apt-get install -y git && \
-    git clone https://github.com/VictoKu1/Anomaly_Detection.git
+# Install dependencies
+RUN pip install numpy pandas scikit-learn
 
-WORKDIR /Anomaly_Detection
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-
-# Copy UI application
+# Copy the necessary files from the host machine to the container
 COPY anomaly_detection_ui.py .
+COPY conn_attack_anomaly_labels.csv .
+COPY conn_attack.csv .
 
-# Run the UI application
+# Set the command to run when the container starts
 CMD ["python", "anomaly_detection_ui.py"]
+
+
+
 
 
 
