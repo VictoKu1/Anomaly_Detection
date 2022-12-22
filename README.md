@@ -16,7 +16,7 @@ Run the docker container:
 
 ```
    
-    docker run -it  anomaly_detection_u
+    docker run -it  anomaly_detection_ui
 
 ```
 
