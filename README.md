@@ -2,13 +2,12 @@
 
 ###### Ariel University, Israel || Semester A - 2022
 
-##### Docker usage instructions:
+## Docker usage instructions:
 
 Pip requirements for the Jupyter notebook and the UI:
 
 ```
-
-    pip install -r requirements.txt
+pip install -r requirements.txt
 
 ```
 
